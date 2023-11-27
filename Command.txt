@@ -67,5 +67,4 @@ oci network security-list create \
   }
 ]
 
-
-
+THis is text 
