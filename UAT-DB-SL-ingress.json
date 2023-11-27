@@ -1,0 +1,42 @@
+[
+  {
+    "description": "Node to Database.",
+    "source": "10.81.226.48/28",
+    "protocol": "6",
+    "isStateless": true,
+    "tcpOptions": {
+      "destinationPortRange": {"max": 3306, "min": 3306},
+      "sourcePortRange": {"max": 65535, "min": 32768}
+    }
+  },
+  {
+    "description": "Node to OKE Cluster.",
+    "source": "10.81.226.0/28",
+    "protocol": "6",
+    "is-stateless": true,
+    "tcpOptions": {
+      "destinationPortRange": {"max": 3306, "min": 3306},
+      "sourcePortRange": {"max": 65535, "min": 32768}
+    }
+  },
+  {
+    "description": "Bastion to DB",
+    "source": "10.81.226.21/32",
+    "protocol": "6",
+    "is-stateless": true,
+    "tcpOptions": {
+      "destinationPortRange": {"max": 3306, "min": 3306},
+      "sourcePortRange": {"max": 65535, "min": 32768}
+    }
+  },
+  {
+    "description": "Bastion to DB",
+    "source": "10.81.226.8/32",
+    "protocol": "6",
+    "is-stateless": true,
+    "tcpOptions": {
+      "destinationPortRange": {"max": 3306, "min": 3306},
+      "sourcePortRange": {"max": 65535, "min": 32768}
+    }
+  }
+]

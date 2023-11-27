@@ -1,0 +1,68 @@
+oci network security-list update \
+  --security-list-id <your-security-list-id> \
+  --ingress-security-rules file://ingress.json \
+  --egress-security-rules file://egress.json
+
+
+
+oci network security-list update --security-list-id ocid1.securitylist.oc1.ap-hyderabad-1.aaaaaaaaqnbttofeyu7olschtvdgl3o3fodndsg7zu43ejn3ruqqjm2xmsoa --ingress-security-rules file://privatenodeingress.json --egress-security-rules file://privatenodeegress.json
+
+
+oci network security-list update --security-list-id ocid1.subnet.oc1.ap-hyderabad-1.aaaaaaaafpm6g4rpwfoiptuktdniy3aicuhjnbwje7hyych4he2qkj3c3psq --ingress-security-rules file://loadbalanceringress.json --egress-security-rules file://loadbalanceregress.json
+
+
+oci network security-list update --security-list-id ocid1.securitylist.oc1.ap-hyderabad-1.aaaaaaaaygtc4tf56nfobzsivngm2owpi32ng6exqrywdjmqvxmhmm6g2kea --ingress-security-rules file://apiendpointingress.json --egress-security-rules file://apiendpointegress.json
+
+
+apiendpointegress.json  apiendpointingress.json
+
+
+ocid1.securitylist.oc1.ap-hyderabad-1.aaaaaaaankteecatum647lycfespgdso7xonietizxhsgupciqerq4t4k7zq
+
+
+oci network security-list create \
+  --compartment-id  ocid1.compartment.oc1..aaaaaaaar3iznmaqywvtxoauuusrwgazpynbsu6kliz66mq2bt6hy7c4tdca \
+  --vcn-id ocid1.vcn.oc1.ap-hyderabad-1.amaaaaaa7sbqhsiaxidrntaycflu4n7xsg3rlpm5k35dy5h4kwydufqwbzjq \
+  --display-name "seclist-workernodes" \
+  --ingress-security-rules file://apiendpointingress.json \
+  --egress-security-rules file://apiendpointegress.json
+
+
+
+
+
+[
+  {
+    "description": "Kubernetes worker to Kubernetes API endpoint communication",
+    "source": "10.81.227.48/28",
+    "protocol": "6",
+    "tcpOptions": {
+      "destinationPortRange": {"min": 6443, "max": 6443}
+    }
+  },
+  {
+    "description": "Kubernetes worker to control plane communication",
+    "source": "10.81.227.48/28",
+    "protocol": "6",
+    "tcpOptions": {
+      "destinationPortRange": {"min": 12250, "max": 12250}
+    }
+  },
+  {
+    "description": "Path Discovery",
+    "source": "10.81.227.48/28",
+    "protocol": "1",
+    "icmpOptions": {"type": 3, "code": 4}
+  },
+  {
+    "description": "(optional) External access to Kubernetes API endpoint",
+    "source": [
+      "10.81.227.8/32",
+      "10.81.227.26/32"
+    ],
+    "protocol": "6",
+    "tcpOptions": {
+      "destinationPortRange": {"min": 6443, "max": 6443}
+    }
+  }
+]

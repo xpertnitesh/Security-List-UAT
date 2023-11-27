@@ -1,0 +1,63 @@
+[
+  {
+    "description": "Kubernetes worker to Kubernetes API endpoint communication.",
+    "source": "10.81.226.48/28",
+    "protocol": "6",
+    "isStateless": false,
+    "tcpOptions": {
+      "destinationPortRange": {"max": 6443, "min": 6443},
+      "sourcePortRange": null
+    }
+  },
+  {
+    "description": "Kubernetes worker to control plane communication.",
+    "source": "10.81.226.48/28",
+    "protocol": "6",
+    "isStateless": false,
+    "tcpOptions": {
+      "destinationPortRange": {"max": 12250, "min": 12250},
+      "sourcePortRange": null
+    }
+  },
+  {
+    "description": "Bastion subnet CIDR when access is made through OCI Bastion",
+    "source": "10.81.226.8/32",
+    "protocol": "6",
+    "is-Stateless": true,
+    "tcpOptions": {
+      "destinationPortRange": {"max": 6443, "min": 6443},
+      "sourcePortRange": {"max": 65535, "min": 32768}
+    }
+  },
+  {
+    "description": "Bastion subnet CIDR when access is made through OCI Bastion",
+    "source": "10.81.226.21/32",
+    "protocol": "6",
+    "is-Stateless": true,
+    "tcpOptions": {
+      "destinationPortRange": {"max": 6443, "min": 6443},
+      "sourcePortRange": {"max": 65535, "min": 32768}
+    }
+  },
+  {
+    "description": "Path Discovery",
+    "source": "10.81.226.48/28",
+    "protocol": "1",
+    "isStateless": false,
+    "icmpOptions": {
+      "type": 3,
+      "code": 4
+    }
+  },
+  {
+    "description": "Database Response Traffic",
+    "source": "10.81.226.32/28",
+    "protocol": "6",
+    "is-stateless": true,
+    "tcpOptions": {
+      "sourcePortRange": {"max": 3306, "min": 3306},
+      "destinationPortRange": {"max": 65535, "min": 32768}
+    }
+  }
+]
+

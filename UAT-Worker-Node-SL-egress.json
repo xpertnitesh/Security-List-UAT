@@ -1,0 +1,77 @@
+[
+  {
+    "description": "Allow pods on one worker node to communicate with pods on other worker nodes.",
+    "destination": "10.81.226.48/28",
+    "protocol": "all",
+    "destinationType": "CIDR_BLOCK"
+  },
+  {
+    "description": "Path Discovery",
+    "destination": "0.0.0.0/0",
+    "protocol": "1",
+    "icmpOptions": {"type": 3, "code": 4}
+  },
+  {
+    "description": "Allow worker nodes to communicate with OKE.",
+    "destination": "all-hyd-services-in-oracle-services-network",
+    "destinationType": "SERVICE_CIDR_BLOCK",
+    "protocol": "all",
+    "isStateless": false
+  },
+  {
+    "description": "Kubernetes worker to Kubernetes API endpoint communication.",
+    "destination": "10.81.226.0/28",
+    "protocol": "6",
+    "isStateless": false,
+    "tcpOptions": {"destinationPortRange": {"min": 6443, "max": 6443}}
+  },
+  {
+    "description": "Kubernetes worker to control plane communication.",
+    "destination": "10.81.226.0/28",
+    "protocol": "6",
+    "isStateless": false,
+    "tcpOptions": {"destinationPortRange": {"min": 12250, "max": 12250}}
+  },
+  {
+    "description": "Allow worker nodes to communicate with internet.",
+    "destination": "0.0.0.0/0",
+    "protocol": "6",
+    "is-stateless": true,
+    "tcpOptions": {
+      "destinationPortRange": {"min": 443, "max": 443},
+      "sourcePortRange": {"max": 65535, "min": 32768}
+  }
+  },
+  {
+    "description": "Allow worker nodes to communicate with Database",
+    "destination": "10.81.226.32/28",
+    "protocol": "6",
+    "is-stateless": true,
+    "tcpOptions": {
+      "destinationPortRange": {"min": 3306, "max": 3306},
+      "sourcePortRange": {"max": 65535, "min": 32768}
+    }
+  },
+  {
+    "description": "Response traffic for Bastion",
+    "destination": "10.81.226.8/32",
+    "protocol": "6",
+    "is-stateless": true,
+    "tcpOptions": {
+      "sourcePortRange": {"min": 22, "max": 22},
+      "destinationPortRange": {"max": 65535, "min": 32768}
+    }
+  },
+  {
+    "description": "Response traffic for Bastion",
+    "destination": "10.81.226.21/32",
+    "protocol": "6",
+    "is-stateless": true,
+    "tcpOptions": {
+      "sourcePortRange": {"min": 22, "max": 22},
+      "destinationPortRange": {"max": 65535, "min": 32768}
+    }
+  }
+
+
+]

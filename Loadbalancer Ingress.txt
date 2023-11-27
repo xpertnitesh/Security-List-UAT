@@ -1,0 +1,10 @@
+[
+  {
+    "description": "Inbound request from 0.0.0.0/0 on port 443",
+    "source": "0.0.0.0/0",
+    "protocol": "tcp",
+    "tcpOptions": {
+      "destinationPortRange": {"min": 443, "max": 443}
+    }
+  }
+]

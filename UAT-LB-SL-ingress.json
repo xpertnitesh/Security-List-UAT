@@ -1,0 +1,11 @@
+[
+  {
+    "description": "Load balancer listener on TCP 443 from Internet",
+    "source": "0.0.0.0/0",
+    "is-stateless": false,
+    "protocol": "6",
+    "tcpOptions": {
+      "destinationPortRange": {"max": 443, "min": 443}
+    }
+  }
+]

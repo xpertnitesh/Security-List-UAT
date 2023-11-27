@@ -1,0 +1,61 @@
+[
+  {
+    "description": "Allow Kubernetes control plane to communicate with worker nodes.",
+    "destination": "10.81.226.48/28",
+    "destinationType": "CIDR_BLOCK",
+    "protocol": "all",
+    "isStateless": false
+  },
+  {
+    "description": "Path Discovery",
+    "destination": "10.81.226.48/28",
+    "protocol": "1",
+    "icmpOptions": {"type": 3, "code": 4}    
+  },
+  {
+    "description": "Allow Kubernetes control plane to communicate with OKE.",
+    "destination": "all-hyd-services-in-oracle-services-network",
+    "destinationType": "SERVICE_CIDR_BLOCK",
+    "protocol": "all",
+    "isStateless": false
+  },
+  {
+    "description": "Path Discovery for OKE",
+    "destination": "all-hyd-services-in-oracle-services-network",
+    "destinationType": "SERVICE_CIDR_BLOCK",
+    "protocol": "1",
+    "icmpOptions": {"type": 3, "code": 4}
+  },
+  {
+    "description": "Response traffic for Bastion from OKE Cluster",
+    "destination": "10.81.226.8/32",
+    "protocol": "6",
+    "is-stateless": true,
+    "tcpOptions": {
+      "sourcePortRange": {"min": 6443, "max": 6443},
+      "destinationPortRange": {"max": 65535, "min": 32768}
+    }
+  },
+  {
+    "description": "Response traffic for Bastion from OKE Cluster",
+    "destination": "10.81.226.21/32",
+    "protocol": "6",
+    "is-stateless": true,
+    "tcpOptions": {
+      "sourcePortRange": {"min": 6443, "max": 6443},
+      "destinationPortRange": {"max": 65535, "min": 32768}
+    }
+  },
+
+  {
+    "description": "Allow API Node to communicate with Database",
+    "destination": "10.81.226.32/28",
+    "protocol": "6",
+    "is-Stateless": true,
+    "tcpOptions": {
+      "destinationPortRange": {"min": 3306, "max": 3306},
+      "sourcePortRange": {"max": 65535, "min": 32768}
+    }
+  }
+]
+

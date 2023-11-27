@@ -1,0 +1,161 @@
+to Create : 
+oci network security-list create   \ 
+--compartment-id  ocid1.compartment.oc1..aaaaaaaar3iznmaqywvtxoauuusrwgazpynbsu6kliz66mq2bt6hy7c4tdca   \
+--vcn-id ocid1.vcn.oc1.ap-hyderabad-1.amaaaaaa7sbqhsiaxidrntaycflu4n7xsg3rlpm5k35dy5h4kwydufqwbzjq   \
+--display-name "seclist-workernodes"   \
+--ingress-security-rules file://apiendpointingress.json   --egress-security-rules file://apiendpointegress.json
+
+To Update : 
+oci network security-list update \
+--security-list-id ocid1.securitylist.oc1.ap-hyderabad-1.aaaaaaaaqnbttofeyu7olschtvdgl3o3fodndsg7zu43ejn3ruqqjm2xmsoa \
+--ingress-security-rules file://apiendpointingress.json \
+--egress-security-rules file://apiendpointegress.json
+
+
+
+Ingress
+
+[
+  {
+    "description": "Allow pods on one worker node to communicate with pods on other worker nodes.",
+    "source": "10.81.226.48/28",
+    "protocol": "all",
+    "isStateless": false,
+    "tcpOptions": {
+      "destinationPortRange": null,
+      "sourcePortRange": null
+    }
+  },
+  {
+    "description": "Allow Kubernetes control plane to communicate with worker nodes.",
+    "source": "10.81.227.0/28",
+    "protocol": "6",
+    "isStateless": false,
+    "tcpOptions": {
+      "destinationPortRange": null,
+      "sourcePortRange": null
+    }
+  },
+  {
+    "description": "Path Discovery",
+    "source": "0.0.0.0/0",
+    "protocol": "1",
+    "icmpOptions": {"type": 3, "code": 4}    
+  },
+  {
+    "description": "Allow inbound SSH traffic to managed nodes.",
+    "source": "10.81.227.8/32",
+    "protocol": "6",
+    "isStateless": false,
+    "tcpOptions": {
+      "destinationPortRange": {"max": 22, "min": 22},
+      "sourcePortRange": null
+    }
+  },
+  {
+    "description": "Allow inbound SSH traffic to managed nodes.",
+    "source": "10.81.227.26/32",
+    "protocol": "6",
+    "isStateless": false,
+    "tcpOptions": {
+      "destinationPortRange": {"max": 22, "min": 22},
+      "sourcePortRange": null
+    }
+  },
+  {
+    "description": "Load balancer to worker nodes node ports.",
+    "source": "10.81.227.16/28",
+    "protocol": null,
+    "isStateless": false,
+    "tcpOptions": {
+      "destinationPortRange": {"max": 30000, "min": 32767},
+      "sourcePortRange": null
+    }
+  },
+  {
+    "description": "Allow load balancer to communicate with kube-proxy on worker nodes.",
+    "source": "10.81.227.16/28",
+    "protocol": null,
+    "isStateless": false,
+    "tcpOptions": {
+      "destinationPortRange": {"max": 10256, "min": 10256},
+      "sourcePortRange": null
+    }
+  }
+]
+
+
+Egress
+
+[
+  {
+    "description": "Allow pods on one worker node to communicate with pods on other worker nodes.",
+    "destination": "10.81.227.48/28",
+    "destinationType": "CIDR_BLOCK",
+    "protocol": "all",
+    "isStateless": false
+  },
+  {
+    "description": "Path Discovery",
+    "destination": "10.81.227.48/28",
+    "protocol": "1",
+    "icmpOptions": {"type": 3, "code": 4}    
+  },
+  {
+    "description": "Allow Kubernetes control plane to communicate with OKE.",
+    "destination": "all-hyd-services-in-oracle-services-network",
+    "destinationType": "SERVICE_CIDR_BLOCK",
+    "protocol": "all",
+    "isStateless": false
+  }
+]
+
+
+
+
+SERVICE_CIDR_BLOCK
+
+all-hyd-services-in-oracle-services-network
+
+
+oci network security-list update \
+--security-list-id ocid1.subnet.oc1.ap-hyderabad-1.aaaaaaaaspns4vhpesmbe36kvwvktejm25oaym67eainviygh357r2wdf6ka \
+--ingress-security-rules file://apiendpointingress.json \
+--egress-security-rules file://apiendpointegress.json
+
+
+
+
+apiendpointegress.json  apiendpointingress.json  dbegress.json  dbingress.json  loadbalanceregress.json  loadbalanceringress.json  privatenodeegress.json  privatenodeingress.json
+
+
+Private Node Pool Subnet Prod - SL - ocid1.securitylist.oc1.ap-hyderabad-1.aaaaaaaaqnbttofeyu7olschtvdgl3o3fodndsg7zu43ejn3ruqqjm2xmsoa
+Public API Endpoint Subnet Prod - SL - ocid1.securitylist.oc1.ap-hyderabad-1.aaaaaaaaygtc4tf56nfobzsivngm2owpi32ng6exqrywdjmqvxmhmm6g2kea
+Public LB Endpoint Prod - SL - ocid1.securitylist.oc1.ap-hyderabad-1.aaaaaaaa4tqdeqna2dielohccqc5u2el24uaskenxlxzv7v4fejcpqgqqlia
+
+
+
+
+Private Node Pool Subnet Prod
+
+oci network security-list update \
+--security-list-id  ocid1.securitylist.oc1.ap-hyderabad-1.aaaaaaaaqnbttofeyu7olschtvdgl3o3fodndsg7zu43ejn3ruqqjm2xmsoa \
+--ingress-security-rules file://privatenodeingress.json \
+--egress-security-rules file://privatenodeegress.json
+
+
+
+Public API Endpoint Subnet Prod - SL - ocid1.securitylist.oc1.ap-hyderabad-1.aaaaaaaaygtc4tf56nfobzsivngm2owpi32ng6exqrywdjmqvxmhmm6g2kea
+
+oci network security-list update \
+--security-list-id  ocid1.securitylist.oc1.ap-hyderabad-1.aaaaaaaaygtc4tf56nfobzsivngm2owpi32ng6exqrywdjmqvxmhmm6g2kea \
+--ingress-security-rules file://apiendpointingress.json \
+--egress-security-rules file://apiendpointegress.json
+
+
+Public LB Endpoint Prod - SL - ocid1.securitylist.oc1.ap-hyderabad-1.aaaaaaaa4tqdeqna2dielohccqc5u2el24uaskenxlxzv7v4fejcpqgqqlia
+
+oci network security-list update \
+--security-list-id  ocid1.securitylist.oc1.ap-hyderabad-1.aaaaaaaa4tqdeqna2dielohccqc5u2el24uaskenxlxzv7v4fejcpqgqqlia \
+--ingress-security-rules file://loadbalanceringress.json \
+--egress-security-rules file://loadbalanceregress.json

@@ -1,0 +1,78 @@
+[
+  {
+    "description": "Node pool to Database",
+    "icmp-options": null,
+    "is-stateless": true,
+    "protocol": "6",
+    "source": "10.81.226.48/28",
+    "source-type": "CIDR_BLOCK",
+    "tcp-options": {
+      "destination-port-range": {
+        "max": 3306,
+        "min": 3306
+      },
+      "source-port-range": {
+        "max": 65535,
+        "min": 32768
+      }
+    },
+    "udp-options": null
+  },
+  {
+    "description": "Inbound from Cluster to Database",
+    "icmp-options": null,
+    "is-stateless": true,
+    "protocol": "6",
+    "source": "10.81.226.0/28",
+    "source-type": "CIDR_BLOCK",
+    "tcp-options": {
+      "destination-port-range": {
+        "max": 3306,
+        "min": 3306
+      },
+      "source-port-range": {
+        "max": 65535,
+        "min": 32768
+      }
+    },
+    "udp-options": null
+  },
+  {
+    "description": "Inbound request from Bastion Server.",
+    "icmp-options": null,
+    "is-stateless": true,
+    "protocol": "6",
+    "source": "10.81.226.8/32",
+    "source-type": "CIDR_BLOCK",
+    "tcp-options": {
+      "destination-port-range": {
+        "max": 3306,
+        "min": 3306
+      },
+      "source-port-range": {
+        "max": 65535,
+        "min": 32768
+      }
+    },
+    "udp-options": null
+  },
+  {
+    "description": "Inbound request from Bastion Server.",
+    "icmp-options": null,
+    "is-stateless": true,
+    "protocol": "6",
+    "source": "10.81.226.13/32",
+    "source-type": "CIDR_BLOCK",
+    "tcp-options": {
+      "destination-port-range": {
+        "max": 3306,
+        "min": 3306
+      },
+      "source-port-range": {
+        "max": 65535,
+        "min": 32768
+      }
+    },
+    "udp-options": null
+  }
+]

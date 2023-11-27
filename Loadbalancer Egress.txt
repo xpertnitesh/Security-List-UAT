@@ -1,0 +1,28 @@
+[
+  {
+    "description": "Load balancer to worker nodes node ports",
+    "destination": "10.81.227.48/28",
+    "protocol": "all",
+    "tcpOptions": {
+      "destinationPortRange": {"min": 30000, "max": 32767},
+      "sourcePortRange": {"min": 1, "max": 65535}
+    },
+    "udpOptions": {
+      "destinationPortRange": {"min": 30000, "max": 32767},
+      "sourcePortRange": {"min": 1, "max": 65535}
+    }
+  },
+  {
+    "description": "Allow load balancer to communicate with kube-proxy on worker nodes",
+    "destination": "10.81.227.48/28",
+    "protocol": "all",
+    "tcpOptions": {
+      "destinationPortRange": {"min": 10256, "max": 10256},
+      "sourcePortRange": {"min": 1, "max": 65535}
+    },
+    "udpOptions": {
+      "destinationPortRange": {"min": 10256, "max": 10256},
+      "sourcePortRange": {"min": 1, "max": 65535}
+    }
+  }
+]

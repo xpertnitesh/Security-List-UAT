@@ -1,0 +1,79 @@
+[
+  {
+    "description": "Allow pods on one worker node to communicate with pods on other worker nodes.",
+    "source": "10.81.226.48/28",
+    "protocol": "all",
+    "destinationPortRange": null
+  },
+  {
+    "description": "Allow Kubernetes control plane to communicate with worker nodes.",
+    "source": "10.81.226.0/28",
+    "protocol": "6",
+    "destinationPortRange": null
+  },
+  {
+    "description": "Path Discovery",
+    "source": "0.0.0.0/0",
+    "protocol": "1",
+    "icmpOptions": {"type": 3, "code": 4}
+  },
+  {
+    "description": "Load balancer to worker nodes node ports.",
+    "source": "10.81.226.16/28",
+    "protocol": "6",
+    "tcpOptions": {
+      "destinationPortRange": {"max": 32767, "min": 30000},
+      "sourcePortRange": null
+    }
+  },
+  {
+    "description": "Allow load balancer to communicate with kube-proxy on worker nodes.",
+    "source": "10.81.226.16/28",
+    "protocol": "6",
+    "tcpOptions": {
+      "destinationPortRange": {"max": 10256, "min": 10256},
+      "sourcePortRange": null
+    }
+  },
+{
+    "description": "Allow inbound SSH traffic to managed nodes from Bastion",
+    "source": "10.81.226.8/32",
+    "protocol": "6",
+    "is-stateless": true,
+    "tcpOptions": {
+      "destinationPortRange": {"max": 22, "min": 22},
+      "sourcePortRange": {"max": 65535, "min": 32768}
+    }
+  },
+  {
+    "description": "Allow inbound SSH traffic to managed nodes from Bastion",
+    "source": "10.81.226.21/32",
+    "protocol": "6",
+    "is-stateless": true,
+    "tcpOptions": {
+      "destinationPortRange": {"max": 22, "min": 22},
+      "sourcePortRange": {"max": 65535, "min": 32768}
+    }
+  },
+  {
+    "description": "Database Response Traffic",
+    "source": "10.81.226.32/28",
+    "protocol": "6",
+    "is-stateless": true,
+    "tcpOptions": {
+      "sourcePortRange": {"max": 3306, "min": 3306},
+      "destinationPortRange": {"max": 65535, "min": 32768}
+    }
+  },
+  {
+    "description": "Internet Response Traffic",
+    "source": "0.0.0.0/0",
+    "protocol": "6",
+    "is-stateless": true,
+    "tcpOptions": {
+      "sourcePortRange": {"max": 443, "min": 443},
+      "destinationPortRange": {"max": 65535, "min": 32768}
+    }
+  }
+
+]
