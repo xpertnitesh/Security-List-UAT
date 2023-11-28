@@ -47,7 +47,7 @@
   },
   {
     "description": "Allow inbound SSH traffic to managed nodes from Bastion",
-    "source": "10.81.226.21/32",
+    "source": "10.81.226.26/32",
     "protocol": "6",
     "is-stateless": true,
     "tcpOptions": {

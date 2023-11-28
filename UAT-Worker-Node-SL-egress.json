@@ -64,7 +64,7 @@
   },
   {
     "description": "Response traffic for Bastion",
-    "destination": "10.81.226.21/32",
+    "destination": "10.81.226.26/32",
     "protocol": "6",
     "is-stateless": true,
     "tcpOptions": {
