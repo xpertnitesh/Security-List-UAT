@@ -75,5 +75,4 @@
       "destinationPortRange": {"max": 65535, "min": 32768}
     }
   }
-
 ]
