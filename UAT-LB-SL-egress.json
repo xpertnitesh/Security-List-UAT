@@ -1,11 +1,11 @@
 [
   {
     "description": "Response traffic to Internet request",
-    "destination": "10.81.226.48/28",
+    "destination": "0.0.0.0/0",
     "protocol": "6",
     "isStateless": true,
     "tcpOptions": {
-      "destinationPortRange": {"min": 30000, "max": 32767},
+      "destinationPortRange": {"min": 32768, "max": 65535},
       "sourcePortRange:" {"min": 443, "max":443}
   }
   },
@@ -15,5 +15,26 @@
     "protocol": "6",
     "isStateless": false,
     "tcpOptions": {"destinationPortRange": {"min": 10256, "max": 10256}}
+  },
+  {
+    "description": "Load balancer to worker nodes node ports.",
+    "destination": "10.81.226.48/28",
+    "protocol": "6",
+    "isStateless": false,
+    "tcpOptions": {"destinationPortRange": {"min": 30000, "max": 32767}}
+  },
+  {
+    "description": "Bastion to Kuber-API",
+    "destination": "10.81.226.0/28",
+    "protocol": "6",
+    "isStateless": false,
+    "tcpOptions": {"destinationPortRange": {"min": 6443, "max": 6443}}
+  },
+  {
+    "description": "Outbound to Node Pool on port 80",
+    "destination": "10.81.226.48/28",
+    "protocol": "6",
+    "isStateless": false,
+    "tcpOptions": {"destinationPortRange": {"min": 80, "max": 80}}
   }
 ]
