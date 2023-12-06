@@ -6,7 +6,7 @@
     "isStateless": true,
     "tcpOptions": {
       "destinationPortRange": {"min": 32768, "max": 65535},
-      "sourcePortRange:" {"min": 443, "max":443}
+      "sourcePortRange": {"min": 443, "max":443}
   }
   },
   {
