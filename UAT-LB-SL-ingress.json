@@ -5,7 +5,8 @@
     "is-stateless": true,
     "protocol": "6",
     "tcpOptions": {
-      "destinationPortRange": {"max": 443, "min": 443}
+      "destinationPortRange": {"max": 443, "min": 443},
+      "sourcePortRange": {"min": 32768, "max": 65535}
     }
   }
 ]
