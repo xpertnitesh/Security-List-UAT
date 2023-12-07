@@ -8,5 +8,65 @@
       "destinationPortRange": {"max": 443, "min": 443},
       "sourcePortRange": {"min": 32768, "max": 65535}
     }
+  },
+  {
+    "description": "Load balancer listener on TCP 443 from M2P Fintech",
+    "source": "18.61.134.173/32",
+    "is-stateless": true,
+    "protocol": "6",
+    "tcpOptions": {
+      "destinationPortRange": {"max": 443, "min": 443},
+      "sourcePortRange": {"min": 32768, "max": 65535}
+    }
+  },
+  {
+    "description": "Load balancer listener on TCP 443 from M2P Fintech",
+    "source": "18.60.210.19/32",
+    "is-stateless": true,
+    "protocol": "6",
+    "tcpOptions": {
+      "destinationPortRange": {"max": 443, "min": 443},
+      "sourcePortRange": {"min": 32768, "max": 65535}
+    }
+  },
+{
+  "description": "Load balancer listener on TCP 443 from M2P Fintech",
+  "source": "106.51.39.37/32",
+  "is-stateless": true,
+  "protocol": "6",
+  "tcpOptions": {
+    "destinationPortRange": {"max": 443, "min": 443},
+    "sourcePortRange": {"min": 32768, "max": 65535}
   }
+},
+{
+  "description": "Load balancer listener on TCP 443 from M2P Fintech",
+  "source": "49.207.184.89/32",
+  "is-stateless": true,
+  "protocol": "6",
+  "tcpOptions": {
+    "destinationPortRange": {"max": 443, "min": 443},
+    "sourcePortRange": {"min": 32768, "max": 65535}
+  }
+},
+{
+  "description": "Load balancer listener on TCP 443 from CyberNX",
+  "source": "49.248.102.163/32",
+  "is-stateless": true,
+  "protocol": "6",
+  "tcpOptions": {
+    "destinationPortRange": {"max": 443, "min": 443},
+    "sourcePortRange": {"min": 32768, "max": 65535}
+  }
+},
+{
+  "description": "Load balancer listener on TCP 443 from CyberNX",
+  "source": "110.227.252.211/32",
+  "is-stateless": true,
+  "protocol": "6",
+  "tcpOptions": {
+    "destinationPortRange": {"max": 443, "min": 443},
+    "sourcePortRange": {"min": 32768, "max": 65535}
+  }
+}
 ]
