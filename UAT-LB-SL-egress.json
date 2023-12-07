@@ -11,7 +11,7 @@
   },
   {
     "description": "M2P Fintech IP to loadbalancer",
-    "destination": [{"18.61.134.173/32", "18.60.210.19/32"}],
+    "destination": ["18.61.134.173/32", "18.60.210.19/32"],
     "protocol": "6",
     "isStateless": true,
     "tcpOptions": {
