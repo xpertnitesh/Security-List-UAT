@@ -1,6 +1,6 @@
 [
   {
-    "description": "Response traffic to Internet request",
+    "description": "Response traffic to Internet request to load balancer",
     "destination": "0.0.0.0/0",
     "protocol": "6",
     "isStateless": true,
