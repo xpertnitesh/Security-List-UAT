@@ -20,6 +20,39 @@
   }
   }, 
   {
+    "description": "M2P Fintech IP to loadbalancer",
+    "destination": "18.60.210.19/32",
+    "protocol": "6",
+    "isStateless": true,
+    "tcpOptions": {
+      "destinationPortRange": {"min": 32768, "max": 65535},
+      "sourcePortRange": {"min": 443, "max":443}
+  }
+  }, 
+
+  {
+    "description": "M2P Fintech IP to loadbalancer",
+    "destination": "49.207.184.89/32",
+    "protocol": "6",
+    "isStateless": true,
+    "tcpOptions": {
+      "destinationPortRange": {"min": 32768, "max": 65535},
+      "sourcePortRange": {"min": 443, "max":443}
+  }
+  }, 
+  {
+    "description": "M2P Fintech IP to loadbalancer",
+    "destination": "106.51.39.37/32",
+    "protocol": "6",
+    "isStateless": true,
+    "tcpOptions": {
+      "destinationPortRange": {"min": 32768, "max": 65535},
+      "sourcePortRange": {"min": 443, "max":443}
+  }
+  }, 
+
+
+  {
     "description": "Load balancer to worker nodes node ports.",
     "destination": "10.81.226.48/28",
     "protocol": "6",
