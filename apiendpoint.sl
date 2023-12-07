@@ -1,0 +1,1 @@
+oci network security-list update --security-list-id ocid1.securitylist.oc1.ap-hyderabad-1.aaaaaaaatmp3lc6gb4iju6pmu52beic74mprvrefki65tbnywbuu3lfd46ya --ingress-security-rules file://UAT-API-Endpoint-SL-ingress.json  --egress-security-rules file://UAT-API-Endpoint-SL-egress.json
