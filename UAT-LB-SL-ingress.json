@@ -68,5 +68,15 @@
     "destinationPortRange": {"max": 443, "min": 443},
     "sourcePortRange": {"min": 32768, "max": 65535}
   }
+},
+{
+  "description": "Load balancer listener on TCP 443 from ABFL",
+  "source": "165.225.106.110/32",
+  "is-stateless": true,
+  "protocol": "6",
+  "tcpOptions": {
+    "destinationPortRange": {"max": 443, "min": 443},
+    "sourcePortRange": {"min": 32768, "max": 65535}
+  }
 }
 ]
