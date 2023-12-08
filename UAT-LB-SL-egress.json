@@ -1,15 +1,5 @@
 [
   {
-    "description": "Response traffic to Internet request to load balancer",
-    "destination": "0.0.0.0/0",
-    "protocol": "6",
-    "isStateless": true,
-    "tcpOptions": {
-      "destinationPortRange": {"min": 32768, "max": 65535},
-      "sourcePortRange": {"min": 443, "max":443}
-  }
-  },
-  {
     "description": "M2P Fintech IP to loadbalancer",
     "destination": "18.61.134.173/32",
     "protocol": "6",
