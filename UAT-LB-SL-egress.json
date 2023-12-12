@@ -289,38 +289,6 @@
   },
   {
     "description": "Response Traffic from Load balancer to ABFL",
-    "destination": "165.225.120.0/23",
-    "protocol": 6,
-    "isStateless": true,
-    "tcpOptions": {
-      "destinationPortRange": {
-        "min": 1025,
-        "max": 65535
-      },
-      "sourcePortRange": {
-        "min": 443,
-        "max": 443
-      }
-    }
-  },
-  {
-    "description": "Response Traffic from Load balancer to ABFL",
-    "destination": "165.225.122.0/23",
-    "protocol": 6,
-    "isStateless": true,
-    "tcpOptions": {
-      "destinationPortRange": {
-        "min": 1025,
-        "max": 65535
-      },
-      "sourcePortRange": {
-        "min": 443,
-        "max": 443
-      }
-    }
-  },
-  {
-    "description": "Response Traffic from Load balancer to ABFL",
     "destination": "136.226.242.0/23",
     "protocol": 6,
     "isStateless": true,
@@ -370,70 +338,6 @@
   {
     "description": "Response Traffic from Load balancer to ABFL",
     "destination": "136.226.232.0/23",
-    "protocol": 6,
-    "isStateless": true,
-    "tcpOptions": {
-      "destinationPortRange": {
-        "min": 1025,
-        "max": 65535
-      },
-      "sourcePortRange": {
-        "min": 443,
-        "max": 443
-      }
-    }
-  },
-  {
-    "description": "Response Traffic from Load balancer to ABFL",
-    "destination": "136.226.230.0/23",
-    "protocol": 6,
-    "isStateless": true,
-    "tcpOptions": {
-      "destinationPortRange": {
-        "min": 1025,
-        "max": 65535
-      },
-      "sourcePortRange": {
-        "min": 443,
-        "max": 443
-      }
-    }
-  },
-  {
-    "description": "Response Traffic from Load balancer to ABFL",
-    "destination": "136.226.232.0/23",
-    "protocol": 6,
-    "isStateless": true,
-    "tcpOptions": {
-      "destinationPortRange": {
-        "min": 1025,
-        "max": 65535
-      },
-      "sourcePortRange": {
-        "min": 443,
-        "max": 443
-      }
-    }
-  },
-  {
-    "description": "Response Traffic from Load balancer to ABFL",
-    "destination": "136.226.254.0/23",
-    "protocol": 6,
-    "isStateless": true,
-    "tcpOptions": {
-      "destinationPortRange": {
-        "min": 1025,
-        "max": 65535
-      },
-      "sourcePortRange": {
-        "min": 443,
-        "max": 443
-      }
-    }
-  },
-  {
-    "description": "Response Traffic from Load balancer to ABFL",
-    "destination": "136.226.252.0/23",
     "protocol": 6,
     "isStateless": true,
     "tcpOptions": {
