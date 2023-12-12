@@ -849,7 +849,7 @@
   },
   {
     "description": "Response Traffic from Load balancer to ABFL",
-    "destination": "185.46.213.46   /32",
+    "destination": "185.46.213.46/32",
     "protocol": 6,
     "isStateless": true,
     "tcpOptions": {
