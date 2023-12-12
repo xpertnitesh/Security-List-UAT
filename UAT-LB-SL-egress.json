@@ -6,7 +6,7 @@
     "isStateless": true,
     "tcpOptions": {
       "destinationPortRange": {
-        "min": 1025,
+        "min": 32768,
         "max": 65535
       },
       "sourcePortRange": {
@@ -22,7 +22,7 @@
     "isStateless": true,
     "tcpOptions": {
       "destinationPortRange": {
-        "min": 1025,
+        "min": 32768,
         "max": 65535
       },
       "sourcePortRange": {
@@ -38,7 +38,7 @@
     "isStateless": true,
     "tcpOptions": {
       "destinationPortRange": {
-        "min": 1025,
+        "min": 32768,
         "max": 65535
       },
       "sourcePortRange": {
@@ -54,7 +54,7 @@
     "isStateless": true,
     "tcpOptions": {
       "destinationPortRange": {
-        "min": 1025,
+        "min": 32768,
         "max": 65535
       },
       "sourcePortRange": {
@@ -70,7 +70,7 @@
     "isStateless": true,
     "tcpOptions": {
       "destinationPortRange": {
-        "min": 1025,
+        "min": 32768,
         "max": 65535
       },
       "sourcePortRange": {
@@ -86,7 +86,7 @@
     "isStateless": true,
     "tcpOptions": {
       "destinationPortRange": {
-        "min": 1025,
+        "min": 32768,
         "max": 65535
       },
       "sourcePortRange": {
@@ -102,7 +102,7 @@
     "isStateless": true,
     "tcpOptions": {
       "destinationPortRange": {
-        "min": 1025,
+        "min": 32768,
         "max": 65535
       },
       "sourcePortRange": {
@@ -118,7 +118,7 @@
     "isStateless": true,
     "tcpOptions": {
       "destinationPortRange": {
-        "min": 1025,
+        "min": 32768,
         "max": 65535
       },
       "sourcePortRange": {

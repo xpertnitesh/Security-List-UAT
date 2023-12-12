@@ -10,7 +10,7 @@
         "min": 443
       },
       "sourcePortRange": {
-        "min": 1025,
+        "min": 32768,
         "max": 65535
       }
     }
@@ -26,7 +26,7 @@
         "min": 443
       },
       "sourcePortRange": {
-        "min": 1025,
+        "min": 32768,
         "max": 65535
       }
     }
@@ -42,7 +42,7 @@
         "min": 443
       },
       "sourcePortRange": {
-        "min": 1025,
+        "min": 32768,
         "max": 65535
       }
     }
@@ -58,7 +58,7 @@
         "min": 443
       },
       "sourcePortRange": {
-        "min": 1025,
+        "min": 32768,
         "max": 65535
       }
     }
@@ -74,7 +74,7 @@
         "min": 443
       },
       "sourcePortRange": {
-        "min": 1025,
+        "min": 32768,
         "max": 65535
       }
     }
@@ -90,7 +90,7 @@
         "min": 443
       },
       "sourcePortRange": {
-        "min": 1025,
+        "min": 32768,
         "max": 65535
       }
     }
