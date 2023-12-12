@@ -769,7 +769,7 @@
   },
   {
     "description": "Load balancer listener on TCP 443 from ABFL",
-    "source": "185.46.213.46   /32",
+    "source": "185.46.213.46/32",
     "is-stateless": true,
     "protocol": "6",
     "tcpOptions": {
