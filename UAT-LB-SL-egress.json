@@ -782,5 +782,69 @@
         "max": 443
       }
     }
+  },
+  {
+    "description": "Response Traffic from Load balancer to ABFL",
+    "destination": "35.154.40.90/32",
+    "protocol": 6,
+    "isStateless": true,
+    "tcpOptions": {
+      "destinationPortRange": {
+        "min": 1025,
+        "max": 65535
+      },
+      "sourcePortRange": {
+        "min": 443,
+        "max": 443
+      }
+    }
+  },
+  {
+    "description": "Response Traffic from Load balancer to ABFL",
+    "destination": "35.154.4.249/32",
+    "protocol": 6,
+    "isStateless": true,
+    "tcpOptions": {
+      "destinationPortRange": {
+        "min": 1025,
+        "max": 65535
+      },
+      "sourcePortRange": {
+        "min": 443,
+        "max": 443
+      }
+    }
+  },
+  {
+    "description": "Response Traffic from Load balancer to ABFL",
+    "destination": "35.154.26.90/32",
+    "protocol": 6,
+    "isStateless": true,
+    "tcpOptions": {
+      "destinationPortRange": {
+        "min": 1025,
+        "max": 65535
+      },
+      "sourcePortRange": {
+        "min": 443,
+        "max": 443
+      }
+    }
+  },
+  {
+    "description": "Response Traffic from Load balancer to ABFL",
+    "destination": "35.154.48.104/32",
+    "protocol": 6,
+    "isStateless": true,
+    "tcpOptions": {
+      "destinationPortRange": {
+        "min": 1025,
+        "max": 65535
+      },
+      "sourcePortRange": {
+        "min": 443,
+        "max": 443
+      }
+    }
   }
 ]
