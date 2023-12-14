@@ -734,5 +734,69 @@
         "max": 65535
       }
     }
+  },
+  {
+    "description": "Load balancer listener on TCP 443 from ABFL",
+    "source": "35.154.40.90/32",
+    "is-stateless": true,
+    "protocol": "6",
+    "tcpOptions": {
+      "destinationPortRange": {
+        "max": 443,
+        "min": 443
+      },
+      "sourcePortRange": {
+        "min": 1025,
+        "max": 65535
+      }
+    }
+  },
+  {
+    "description": "Load balancer listener on TCP 443 from ABFL",
+    "source": "35.154.4.249/32",
+    "is-stateless": true,
+    "protocol": "6",
+    "tcpOptions": {
+      "destinationPortRange": {
+        "max": 443,
+        "min": 443
+      },
+      "sourcePortRange": {
+        "min": 1025,
+        "max": 65535
+      }
+    }
+  },
+  {
+    "description": "Load balancer listener on TCP 443 from ABFL",
+    "source": "35.154.26.90/32",
+    "is-stateless": true,
+    "protocol": "6",
+    "tcpOptions": {
+      "destinationPortRange": {
+        "max": 443,
+        "min": 443
+      },
+      "sourcePortRange": {
+        "min": 1025,
+        "max": 65535
+      }
+    }
+  },
+  {
+    "description": "Load balancer listener on TCP 443 from ABFL",
+    "source": "35.154.48.104/32",
+    "is-stateless": true,
+    "protocol": "6",
+    "tcpOptions": {
+      "destinationPortRange": {
+        "max": 443,
+        "min": 443
+      },
+      "sourcePortRange": {
+        "min": 1025,
+        "max": 65535
+      }
+    }
   }
 ]
