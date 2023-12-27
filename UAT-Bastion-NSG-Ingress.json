@@ -1,0 +1,38 @@
+[
+  {
+    "description": "vikram temp ip",
+    "direction": "INGRESS",
+    "isStateless": "True",
+    "protocol": "6",
+    "source": "182.68.37.61/32",
+    "sourceType": "CIDR_BLOCK",
+    "tcpOptions": {
+      "destinationPortRange": {
+        "min": 3389,
+        "max": 3389
+      },
+      "sourcePortRange": {
+        "min": 1,
+        "max": 65535
+      }
+    }
+  },
+  {
+    "description": "vikram temp ip",
+    "destination": "182.68.37.61/32",
+    "destinationType": "CIDR_BLOCK",
+    "direction": "EGRESS",
+    "isStateless": "True",
+    "protocol": "6",
+    "tcpOptions": {
+      "destinationPortRange": {
+        "min": 1,
+        "max": 65535
+      },
+      "sourcePortRange": {
+        "min": 3389,
+        "max": 3389
+      }
+    }
+  }
+]

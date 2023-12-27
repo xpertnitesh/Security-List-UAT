@@ -39,7 +39,7 @@
     "description": "Allow inbound SSH traffic to managed nodes from Bastion",
     "source": "10.81.226.8/32",
     "protocol": "6",
-    "is-stateless": true,
+    "isStateless": true,
     "tcpOptions": {
       "destinationPortRange": {"max": 22, "min": 22},
       "sourcePortRange": {"max": 65535, "min": 32768}
@@ -49,7 +49,7 @@
     "description": "Allow inbound SSH traffic to managed nodes from Bastion",
     "source": "10.81.226.26/32",
     "protocol": "6",
-    "is-stateless": true,
+    "isStateless": true,
     "tcpOptions": {
       "destinationPortRange": {"max": 22, "min": 22},
       "sourcePortRange": {"max": 65535, "min": 32768}
@@ -59,7 +59,7 @@
     "description": "Database Response Traffic",
     "source": "10.81.226.32/28",
     "protocol": "6",
-    "is-stateless": true,
+    "isStateless": true,
     "tcpOptions": {
       "sourcePortRange": {"max": 3306, "min": 3306},
       "destinationPortRange": {"max": 65535, "min": 32768}
@@ -69,7 +69,8 @@
     "description": "Internet Response Traffic",
     "source": "0.0.0.0/0",
     "protocol": "6",
-    "is-stateless": true,
+    
+    "isStateless": true,
     "tcpOptions": {
       "sourcePortRange": {"max": 443, "min": 443},
       "destinationPortRange": {"max": 65535, "min": 32768}
